@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { login, logout, isLoggedIn } from '../utils/AuthService';
 import { uploadWidget } from '../utils/WidgetHelper';
 import '../App.css';
@@ -13,7 +13,7 @@ class Nav extends React.Component {
             upload_preset: 'd4b5vsbo', // mandatory
             tags: ['cliphy'], // API searches cloudinary and gets images that we have tagged with these/this value(s).
             sources: ['local', 'url', 'google-photos', 'facebook'],
-            client_allowed_formats: ['gif'],
+            client_allowed_formats: ["png","gif", "jpeg"],
             keep_widget_open: true,
             theme: 'minimal',
         }
@@ -40,17 +40,19 @@ class Nav extends React.Component {
                             </li>
                         </ul>
                         <ul className="navbar navbar-nav navbar-right">
-                            <li>
-                                {
-                                    (isLoggedIn()) ? <button type="button" className="btn btn-raised btn-sm btn-default" onClick={this.uploadGif}>Upload Gif</button> : ''
-                                }
-                            </li>
-                            <li>
+                            <li style={{listStyleType: 'none'}}>
                                 {
                                     (isLoggedIn()) ? 
-                                        <button type="button" className="btn btn-raised btn-sm btn-danger" onClick={() => logout()}>Log out</button>
+                                        <button type="button" className="btn btn-raised btn-md btn-info" onClick={this.uploadGif}>Upload Gif</button> 
+                                        : ' '
+                                }
+                            </li>
+                            <li style={{listStyleType: 'none'}}>
+                                {
+                                    (isLoggedIn()) ? 
+                                        <button type="button" className="btn btn-raised btn-md btn-danger" style={{marginRight: '20px'}} onClick={() => logout()}>Log out</button>
                                         :
-                                        <button type="button" className="btn btn-raised btn-sm btn-default" onClick={() => login()}>Login</button>
+                                        <button type="button" className="btn btn-raised btn-md btn-info" style={{marginRight: '20px'}}  onClick={() => login()}>Login</button>
                                 }
                             </li>
                         </ul>

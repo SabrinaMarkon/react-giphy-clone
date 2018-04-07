@@ -1,9 +1,25 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link } from 'react-router-dom';
 import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import axios from 'axios';
 import { isLoggedIn } from '../utils/AuthService';
 import Nav from './Nav';
+
+import {
+    FacebookShareButton,
+    // GooglePlusShareButton,
+    // LinkedinShareButton,
+    TwitterShareButton,
+    // TelegramShareButton,
+    // WhatsappShareButton,
+    // PinterestShareButton,
+    // VKShareButton,
+    // OKShareButton,
+    // RedditShareButton,
+    // TumblrShareButton,
+    // LivejournalShareButton,
+    // EmailShareButton,
+  } from 'react-share';
 
 class Dashboard extends React.Component {
 
@@ -39,11 +55,16 @@ class Dashboard extends React.Component {
                                    <div className="col-md-4 col-sm-6 col-xs-12" key={index}>
                                         <div className="panel panel-default">
                                             <div className="panel-body">
-                                                <div className="embed-responsive embed-responsive-16by9">
-                                                    <Image className="img-responsive" publicId={data.public_id}></Image>
+                                                {/* <div className="embed-responsive embed-responsive-16by9"> <-makes them all the same size (cuts off parts of images) */}
+                                                <div>
+                                                    <Image  className="img-responsive center-block" publicId={data.public_id}></Image>
                                                 </div>
                                             </div>
-                                            <div className="panel-footer"></div>
+                                            <div className="panel-footer">
+                                                <TwitterShareButton className="label label-info" title={"React Giphy Clone"} url={`http://res.cloudinary.com/sabrinamarkon/image/upload/${data.public_id}.gif`}>Twitter</TwitterShareButton>
+                                                <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/sabrinamarkon/image/upload/${data.public_id}.gif`}>Facebook
+                                                </FacebookShareButton>
+                                            </div>
                                         </div>
                                    </div>
                             ))
