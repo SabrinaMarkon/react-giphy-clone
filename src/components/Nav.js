@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { login, logout, isLoggedIn } from '../utils/AuthService';
 import { uploadWidget } from '../utils/WidgetHelper';
@@ -11,7 +11,7 @@ class Nav extends React.Component {
         let cloudinarySettings = {
             cloud_name: 'sabrinamarkon', // mandatory
             upload_preset: 'd4b5vsbo', // mandatory
-            tags: ['cliphy'],
+            tags: ['cliphy'], // API searches cloudinary and gets images that we have tagged with these/this value(s).
             sources: ['local', 'url', 'google-photos', 'facebook'],
             client_allowed_formats: ['gif'],
             keep_widget_open: true,
@@ -22,9 +22,6 @@ class Nav extends React.Component {
     uploadWidget = (cloudinarySettings, res) => {
         console.log(res);
     }
-    // uploadWidget((cloudinarySettings, res) => {
-    //     console.log(res);
-    // });
 
     render() {
         return(
@@ -51,11 +48,9 @@ class Nav extends React.Component {
                             <li>
                                 {
                                     (isLoggedIn()) ? 
-                                    (
                                         <button type="button" className="btn btn-raised btn-sm btn-danger" onClick={() => logout()}>Log out</button>
-                                        ) : (
+                                        :
                                         <button type="button" className="btn btn-raised btn-sm btn-default" onClick={() => login()}>Login</button>
-                                    )
                                 }
                             </li>
                         </ul>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './Nav';
 
-class Create extends React.Component {
+class Callback extends React.Component {
 
     render() {
         return(
@@ -12,4 +12,4 @@ class Create extends React.Component {
     }
 }
 
-export default Create;
+export default Callback;
