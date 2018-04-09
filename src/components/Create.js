@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { uploadWidget } from '../utils/WidgetHelper';
 import Nav from './Nav';
+import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
 
 class Create extends Component {
     state = {
@@ -17,8 +18,8 @@ class Create extends Component {
     }
     createGif = () => {
         let cloudinarySettings = {
-            cloud_name: 'sabrinamarkon',
-            upload_preset: 'd4b5vsbo',
+            cloud_name: CLOUD_NAME,
+            upload_preset: UPLOAD_PRESET,
             sources: ['local'],
             client_allowed_formats: ['mp4', 'webm'],
             keep_widget_open: false,
@@ -35,7 +36,7 @@ class Create extends Component {
     }
     setGifString = (uploadedVideoId) => {
         this.setState({
-            gifUrl: `http://res.cloudinary.com/sabrinamarkon/video/upload${(this.state.startTime > 0 && this.state.endTime > 0) ? '/so_' + this.state.startTime + ',eo_' + this.state.endTime : ''}/${uploadedVideoId}.gif`
+            gifUrl: `http://res.cloudinary.com/${CLOUD_NAME}/video/upload${(this.state.startTime > 0 && this.state.endTime > 0) ? '/so_' + this.state.startTime + ',eo_' + this.state.endTime : ''}/${uploadedVideoId}.gif`
         });
     }
     render() {
@@ -69,7 +70,7 @@ class Create extends Component {
                         <div className="panel-body">
                             {
                                 (this.state.isResult) ?
-                                    <img className="img-responsive" alt="" src={this.state.gifUrl}></img> : <span className="label label-info">Kindly upload an mp4 video to create Gif</span>
+                                    <img className="img-responsive" alt="" src={this.state.gifUrl}></img> : <span className="label label-info">Kindly upload an mp4 or webm video to create Gif</span>
                             }
                         </div>
                         <div className="panel-footer">

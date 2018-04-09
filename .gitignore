@@ -5,7 +5,7 @@
 /node_modules
 
 # already pushed generic version without credentials:
-/components/Nav.js
+#/components/Nav.js
 
 # testing
 /coverage

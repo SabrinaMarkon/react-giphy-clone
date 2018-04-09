@@ -1,12 +1,12 @@
 import decode from 'jwt-decode';
-import { browserHistory } from 'react-router-3';
+//import { browserHistory } from 'react-router-3';
 import auth0 from 'auth0-js';
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
 const CLIENT_ID = '{AUTH0_CLIENT_ID}';
 const CLIENT_DOMAIN = '{AUTH0_DOMAIN}';
-const REDIRECT = 'YOUR_CALLBACK_URL';
+const REDIRECT = 'http://localhost:3000/callback';
 const SCOPE = '{SCOPE}';
 const AUDIENCE = 'AUDIENCE_ATTRIBUTE';
 
@@ -27,7 +27,7 @@ export function login() {
 export function logout() {
   clearIdToken();
   clearAccessToken();
-  browserHistory.push('/');
+  //browserHistory.push('/');
 }
 
 export function requireAuth(nextState, replace) {

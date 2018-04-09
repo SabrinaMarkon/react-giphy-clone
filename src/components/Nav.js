@@ -4,13 +4,14 @@ import { login, logout, isLoggedIn } from '../utils/AuthService';
 import { uploadWidget } from '../utils/WidgetHelper';
 import '../App.css';
 import Create from './Create';
+import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
 
 class Nav extends React.Component {
 
     uploadGif() {
         let cloudinarySettings = {
-            cloud_name: 'sabrinamarkon', // mandatory
-            upload_preset: 'd4b5vsbo', // mandatory
+            cloud_name: CLOUD_NAME, // mandatory
+            upload_preset: UPLOAD_PRESET, // mandatory
             tags: ['cliphy'], // API searches cloudinary and gets images that we have tagged with these/this value(s).
             sources: ['local', 'url', 'google-photos', 'facebook'],
             client_allowed_formats: ["png","gif", "jpeg"],

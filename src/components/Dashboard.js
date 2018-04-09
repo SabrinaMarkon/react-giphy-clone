@@ -4,6 +4,7 @@ import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import axios from 'axios';
 import { isLoggedIn } from '../utils/AuthService';
 import Nav from './Nav';
+import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
 
 import {
     FacebookShareButton,
@@ -28,7 +29,7 @@ class Dashboard extends React.Component {
     }
 
     getGifs() {
-        axios.get('http://res.cloudinary.com/sabrinamarkon/image/list/cliphy.json')
+        axios.get('http://res.cloudinary.com/' + CLOUD_NAME +  '/image/list/cliphy.json')
             .then(res => {
                 this.setState({
                     gifs: res.data.resources
@@ -49,7 +50,7 @@ class Dashboard extends React.Component {
                 <Nav />
                 <div className="row">
                     <h3 className="col-md-12">The Dashboard</h3>
-                    <CloudinaryContext cloudName="sabrinamarkon">
+                    <CloudinaryContext cloudName={CLOUD_NAME}>
                         {
                             gifs.map((data, index) => (
                                    <div className="col-md-4 col-sm-6 col-xs-12" key={index}>
@@ -61,8 +62,8 @@ class Dashboard extends React.Component {
                                                 </div>
                                             </div>
                                             <div className="panel-footer">
-                                                <TwitterShareButton className="label label-info" title={"React Giphy Clone"} url={`http://res.cloudinary.com/sabrinamarkon/image/upload/${data.public_id}.gif`}>Twitter</TwitterShareButton>
-                                                <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/sabrinamarkon/image/upload/${data.public_id}.gif`}>Facebook
+                                                <TwitterShareButton className="label label-info" title={"React Giphy Clone"} url={`http://res.cloudinary.com/${CLOUD_NAME}/image/upload/${data.public_id}.gif`}>Twitter</TwitterShareButton>
+                                                <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/${CLOUD_NAME}/image/upload/${data.public_id}.gif`}>Facebook
                                                 </FacebookShareButton>
                                             </div>
                                         </div>
