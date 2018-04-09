@@ -4,8 +4,8 @@ import auth0 from 'auth0-js';
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
-const CLIENT_ID = '{AUTH0_CLIENT_ID}';
-const CLIENT_DOMAIN = '{AUTH0_DOMAIN}';
+const CLIENT_ID = 'AWc700UEZ6HCrIVtKh7ioK7oYnk9c0aL';
+const CLIENT_DOMAIN = 'sabrinamarkon.auth0.com';
 const REDIRECT = 'http://localhost:3000/callback';
 const SCOPE = '{SCOPE}';
 const AUDIENCE = 'AUDIENCE_ATTRIBUTE';

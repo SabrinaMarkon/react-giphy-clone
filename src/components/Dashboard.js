@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import axios from 'axios';
 import { isLoggedIn } from '../utils/AuthService';
 import Nav from './Nav';
-import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
+import { CLOUD_NAME } from '../UserConstants';
 
 import {
     FacebookShareButton,
@@ -22,7 +22,7 @@ import {
     // EmailShareButton,
   } from 'react-share';
 
-class Dashboard extends React.Component {
+class Dashboard extends Component {
 
     state = {
         gifs: []

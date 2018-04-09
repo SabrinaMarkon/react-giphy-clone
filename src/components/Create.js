@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
-import { uploadWidget } from '../utils/WidgetHelper';
-import Nav from './Nav';
+import { uploadWidget } from '../utils/WidgetHelper'; 
+import Nav from './Nav'; 
 import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
+import FaCloudDownload from 'react-icons/lib/fa/cloud-download'; 
+
+const reactIconStyle = {
+    fontSize: 40,
+    color: '#3F51B5',
+    margin: 10,
+    marginBottom: 20
+}
 
 class Create extends Component {
     state = {
@@ -43,10 +51,13 @@ class Create extends Component {
         return (
             <div>
                 <Nav />
+                <div style={{textAlign: 'center', padding: 15, paddingBottom: 25}}>
+                    <h1 style={reactIconStyle}>Convert your mp4 or webm video to a small, quality gif!</h1>
+                </div>
                 <div className="col-md-6 col-md-offset-3">
-                    <div className="well well-sm">
+                    <div className="well well-sm text-center">
                         <form className="form-horizontal">
-                            <legend>Enter start and stop time for animation and hit upload to select file</legend>
+                            <legend className="text-left">Enter start and stop time for animation and hit upload to select file </legend>
                             <div className="form-group">
                                 <label htmlFor="start" className="col-md-2 control-label">Start</label>
                                 <div className="col-md-10">
@@ -70,7 +81,9 @@ class Create extends Component {
                         <div className="panel-body">
                             {
                                 (this.state.isResult) ?
-                                    <img className="img-responsive" alt="" src={this.state.gifUrl}></img> : <span className="label label-info">Kindly upload an mp4 or webm video to create Gif</span>
+                                    <div style={{textAlign: 'center'}}>
+                                    <a href={this.state.gifUrl} target="_blank"><FaCloudDownload style={reactIconStyle}/></a>
+                                    <img className="img-responsive" alt="" src={this.state.gifUrl}></img></div> : <span className="label label-info">Kindly upload an mp4 or webm video to create Gif</span>
                             }
                         </div>
                         <div className="panel-footer">

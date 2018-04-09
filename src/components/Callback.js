@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Nav from './Nav';
 
-class Callback extends React.Component {
+class Callback extends Component {
 
     render() {
         return(
             <div>
+              <Nav />
             
             </div>
         );

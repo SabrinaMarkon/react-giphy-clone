@@ -6,7 +6,7 @@ import '../App.css';
 import Create from './Create';
 import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
 
-class Nav extends React.Component {
+class Nav extends Component {
 
     uploadGif() {
         let cloudinarySettings = {
