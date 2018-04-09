@@ -4,7 +4,7 @@ import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
 import axios from 'axios';
 import { isLoggedIn } from '../utils/AuthService';
 import Nav from './Nav';
-import { CLOUD_NAME } from '../UserConstants';
+import { CLOUD_NAME, bigHeaderStyle, reactIconStyle } from '../UserConstants';
 
 import {
     FacebookShareButton,
@@ -49,7 +49,9 @@ class Dashboard extends Component {
             <div>
                 <Nav />
                 <div className="row">
-                    <h3 className="col-md-12">The Dashboard</h3>
+                <div style={bigHeaderStyle}>
+                    <h1 style={reactIconStyle}>Convert your mp4 or webm video to a small, quality gif!</h1>
+                </div>
                     <CloudinaryContext cloudName={CLOUD_NAME}>
                         {
                             gifs.map((data, index) => (
