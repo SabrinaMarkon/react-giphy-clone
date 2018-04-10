@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "auth0-js": "9.4.2",
+    "auth0-js": "^9.4.2",
     "axios": "0.18.0",
     "cloudinary-react": "^1.0.6",
     "history": "^3.3.0",

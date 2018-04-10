@@ -25,6 +25,8 @@ class Nav extends Component {
     }
 
     render() {
+        console.log('catcatcat' + isLoggedIn()  + 'catcatcat'); // I like cats so border the isLoggedIn true/false by cats to show me in the console that an auth0 login was successful.
+
         return(
             <nav className="navbar navbar-inverse">
                 <div className="container-fluid">

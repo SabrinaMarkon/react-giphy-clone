@@ -4,11 +4,11 @@ import auth0 from 'auth0-js';
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
-const CLIENT_ID = 'AWc700UEZ6HCrIVtKh7ioK7oYnk9c0aL';
+const CLIENT_ID = '2SUoUEYbQFbrAK6W49cidDCbOASOQznN';
 const CLIENT_DOMAIN = 'sabrinamarkon.auth0.com';
 const REDIRECT = 'http://localhost:3000/callback';
-const SCOPE = '{SCOPE}';
-const AUDIENCE = 'AUDIENCE_ATTRIBUTE';
+const SCOPE = '{SCOPE}'; // figure this one out still?
+const AUDIENCE = 'https://sabrinamarkon.auth0.com/api/v2/';
 
 var auth = new auth0.WebAuth({
   clientID: CLIENT_ID,
@@ -27,7 +27,7 @@ export function login() {
 export function logout() {
   clearIdToken();
   clearAccessToken();
-  //browserHistory.push('/');
+  //browserHistory.push('/'); // deprecated. We want to send the user back to the main page (or whatever url) so do this.
 }
 
 export function requireAuth(nextState, replace) {
