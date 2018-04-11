@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { CloudinaryContext, Transformation, Image } from 'cloudinary-react';
+//import { Link } from 'react-router-dom';
+import { CloudinaryContext, /*Transformation,*/ Image } from 'cloudinary-react';
 import axios from 'axios';
-import { isLoggedIn } from '../utils/AuthService';
 import Nav from './Nav';
 import { CLOUD_NAME, bigHeaderStyle, reactIconStyle } from '../UserConstants';
 

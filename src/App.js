@@ -2,14 +2,15 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link,
+  //Link,
   Switch,
-  Redirect
+  //Redirect
 } from "react-router-dom";
 import Dashboard from './components/Dashboard';
 import Create from './components/Create';
 import Callback from './components/Callback';
-import { createBrowserHistory } from 'history';
+//import { createBrowserHistory } from 'history';
+import { requireAuth } from './utils/AuthService';
 
 const App = () => {
   console.log("app component running");
@@ -18,7 +19,7 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={Dashboard} />
-          <Route path="/create" component={Create} />
+          <Route path="/create" component={Create} onEnter={requireAuth} />
           <Route path="/callback" component={Callback} />
         </Switch>
       </Router>

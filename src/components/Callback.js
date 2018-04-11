@@ -3,9 +3,9 @@ import { setIdToken, setAccessToken, isLoggedIn } from '../utils/AuthService';
 
 class Callback extends Component {
 
-  constructor() {
-    super()
-  }
+//   constructor() {
+//     super()
+//   }
 
   componentDidMount() {
     setAccessToken();

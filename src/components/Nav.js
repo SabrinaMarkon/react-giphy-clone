@@ -8,24 +8,33 @@ import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
 
 class Nav extends Component {
 
-    uploadGif() {
+    uploadGif = () => {
         let cloudinarySettings = {
-            cloud_name: CLOUD_NAME, // mandatory
-            upload_preset: UPLOAD_PRESET, // mandatory
-            tags: ['cliphy'], // API searches cloudinary and gets images that we have tagged with these/this value(s).
-            sources: ['local', 'url', 'google-photos', 'facebook'],
+            cloud_name: CLOUD_NAME,
+            upload_preset: UPLOAD_PRESET,
+            tags: ['cliphy'],
+            sources: ['local'],
             client_allowed_formats: ["png","gif", "jpeg"],
             keep_widget_open: true,
+            multiple: true,
             theme: 'minimal',
         }
+        uploadWidget(cloudinarySettings, (res) => {
+        //   if (res && res[0] !== undefined) {
+        //         this.setState({ isResult: true });
+        //         this.setGifString(res[0].public_id);
+        //     }
+            console.log(res);
+        });
     }
 
-    uploadWidget = (cloudinarySettings, res) => {
-        console.log(res);
-    }
+
+    // uploadWidget = (cloudinarySettings, res) => {
+    //     console.log(res);
+    // }
 
     render() {
-        console.log('catcatcat' + isLoggedIn()  + 'catcatcat'); // I like cats so border the isLoggedIn true/false by cats to show me in the console that an auth0 login was successful.
+        //console.log('catcatcat' + isLoggedIn()  + 'catcatcat'); 
 
         return(
             <nav className="navbar navbar-inverse">
@@ -46,14 +55,14 @@ class Nav extends Component {
                             <li style={{listStyleType: 'none'}}>
                                 {
                                     (isLoggedIn()) ? 
-                                        <button type="button" className="btn btn-raised btn-md btn-info" onClick={this.uploadGif}>Upload Gif</button> 
+                                        <button type="button" className="btn btn-raised btn-md btn-info" onClick={this.uploadGif}>Upload Gif</button>
                                         : ' '
                                 }
                             </li>
                             <li style={{listStyleType: 'none'}}>
                                 {
                                     (isLoggedIn()) ? 
-                                        <button type="button" className="btn btn-raised btn-md btn-danger" style={{marginRight: '20px'}} onClick={() => logout()}>Log out</button>
+                                        <button type="button" className="btn btn-raised btn-md btn-danger" style={{marginLeft: '10px', marginRight: '20px'}} onClick={() => logout()}>Log out</button>
                                         :
                                         <button type="button" className="btn btn-raised btn-md btn-info" style={{marginRight: '20px'}}  onClick={() => login()}>Login</button>
                                 }

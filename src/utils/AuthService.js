@@ -7,7 +7,7 @@ const ACCESS_TOKEN_KEY = 'access_token';
 const CLIENT_ID = '2SUoUEYbQFbrAK6W49cidDCbOASOQznN';
 const CLIENT_DOMAIN = 'sabrinamarkon.auth0.com';
 const REDIRECT = 'http://localhost:3000/callback';
-const SCOPE = '{SCOPE}'; // figure this one out still?
+const SCOPE = 'create:gifs'; // figure this one out still? like what do I put here?
 const AUDIENCE = 'https://sabrinamarkon.auth0.com/api/v2/';
 
 var auth = new auth0.WebAuth({
@@ -27,7 +27,8 @@ export function login() {
 export function logout() {
   clearIdToken();
   clearAccessToken();
-  //browserHistory.push('/'); // deprecated. We want to send the user back to the main page (or whatever url) so do this.
+  //browserHistory.push('/'); // deprecated. We want to send the user back to the main page (or whatever url) so do window.location instead for now:
+  window.location.href = "/";
 }
 
 export function requireAuth(nextState, replace) {
