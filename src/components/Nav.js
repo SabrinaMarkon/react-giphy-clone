@@ -45,8 +45,7 @@ class Nav extends Component {
                             {
                                 (isLoggedIn()) ? 
                                 <Link to="/create">Create Gif</Link>
-                                : 
-                                {/* <div>Login to create your own gifs!</div> */}
+                                : ''
                             }
                             </li>
                         </ul>
