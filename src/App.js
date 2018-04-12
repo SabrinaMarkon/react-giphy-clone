@@ -13,7 +13,7 @@ import Callback from './components/Callback';
 import { requireAuth } from './utils/AuthService';
 
 const App = () => {
-  console.log("app component running");
+ //console.log("app component running");
   return (
     <div className="container">
       <Router>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { login, logout, isLoggedIn } from '../utils/AuthService';
 import { uploadWidget } from '../utils/WidgetHelper';
 import '../App.css';
-import Create from './Create';
+//import Create from './Create';
 import { CLOUD_NAME, UPLOAD_PRESET } from '../UserConstants';
 
 class Nav extends Component {
@@ -28,13 +28,7 @@ class Nav extends Component {
         });
     }
 
-
-    // uploadWidget = (cloudinarySettings, res) => {
-    //     console.log(res);
-    // }
-
     render() {
-        //console.log('catcatcat' + isLoggedIn()  + 'catcatcat'); 
 
         return(
             <nav className="navbar navbar-inverse">
@@ -48,7 +42,12 @@ class Nav extends Component {
                                 <Link to="/">All Gifs</Link>
                             </li>
                             <li>
+                            {
+                                (isLoggedIn()) ? 
                                 <Link to="/create">Create Gif</Link>
+                                : 
+                                {/* <div>Login to create your own gifs!</div> */}
+                            }
                             </li>
                         </ul>
                         <ul className="navbar navbar-nav navbar-right">
