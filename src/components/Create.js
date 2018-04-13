@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { isLoggedIn } from '../utils/AuthService';
+import { login, isLoggedIn } from '../utils/AuthService';
 import { uploadWidget } from '../utils/WidgetHelper'; 
 import Nav from './Nav'; 
 import { CLOUD_NAME, UPLOAD_PRESET, bigHeaderStyle, reactIconStyle } from '../UserConstants';
@@ -53,7 +53,7 @@ class Create extends Component {
                 <div className="col-md-6 col-md-offset-3">
                     <div className="well well-sm text-center">
                         <form className="form-horizontal">
-                            <legend className="text-left">Enter start and stop time for animation and hit upload to select file </legend>
+                            <legend>Enter start and stop time for animation, then click 'Create' to select your file! </legend>
                             <div className="form-group">
                                 <label htmlFor="start" className="col-md-2 control-label">Start</label>
                                 <div className="col-md-10">
@@ -87,7 +87,9 @@ class Create extends Component {
                     </div>
                 </div >
                 :
-                ''
+                <div className="text-center">
+                    <h3>Please <button type="button" className="btn btn-raised btn-md btn-info" onClick={() => login()}>Login</button> to create or upload your own gifs!</h3>
+                </div>
                 }
             </div >
         );
