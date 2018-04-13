@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { isLoggedIn } from '../utils/AuthService';
 import { uploadWidget } from '../utils/WidgetHelper'; 
 import Nav from './Nav'; 
 import { CLOUD_NAME, UPLOAD_PRESET, bigHeaderStyle, reactIconStyle } from '../UserConstants';
@@ -47,6 +48,8 @@ class Create extends Component {
                 <div style={bigHeaderStyle}>
                     <h1 style={reactIconStyle}>Convert your mp4 or webm video to a small, quality gif!</h1>
                 </div>
+                {
+                    (isLoggedIn()) ? 
                 <div className="col-md-6 col-md-offset-3">
                     <div className="well well-sm text-center">
                         <form className="form-horizontal">
@@ -83,6 +86,9 @@ class Create extends Component {
                         </div>
                     </div>
                 </div >
+                :
+                ''
+                }
             </div >
         );
     }
