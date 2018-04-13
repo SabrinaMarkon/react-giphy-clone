@@ -83,4 +83,8 @@ typings/
 # dotenv environment variables file
 .env
 
+# authentication files:
+/src/UserConstants.js
+/src/utils/AuthService.js
+
 >>>>>>> 19bcf552b4347fa920d442eac8856607c7515a65
