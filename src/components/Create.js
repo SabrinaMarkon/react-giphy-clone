@@ -78,7 +78,7 @@ class Create extends Component {
                             {
                                 (this.state.isResult) ?
                                     <div style={{textAlign: 'center'}}>
-                                    <a href={this.state.gifUrl} target="_blank"><FaCloudDownload style={reactIconStyle}/></a>
+                                    <a href={this.state.gifUrl} target="_blank" rel="noopener noreferrer"><FaCloudDownload style={reactIconStyle}/></a>
                                     <img className="img-responsive" alt="" src={this.state.gifUrl}></img></div> : <span className="label label-info">Kindly upload an mp4 or webm video to create Gif</span>
                             }
                         </div>
