@@ -28,7 +28,7 @@ class Dashboard extends Component {
     }
 
     getGifs() {
-        axios.get('http://res.cloudinary.com/' + CLOUD_NAME +  '/image/list/cliphy.json')
+        axios.get(`http://res.cloudinary.com/${CLOUD_NAME}/image/list/cliphy.json`)
             .then(res => {
                 this.setState({
                     gifs: res.data.resources
@@ -43,6 +43,8 @@ class Dashboard extends Component {
     render() {
 
         const { gifs } = this.state;
+
+        console.log(gifs);
 
         return(
             <div>
@@ -59,7 +61,7 @@ class Dashboard extends Component {
                                             <div className="panel-body">
                                                 {/* <div className="embed-responsive embed-responsive-16by9"> <-makes them all the same size (cuts off parts of images) */}
                                                 <div>
-                                                    <Image  className="img-responsive center-block" publicId={data.public_id}></Image>
+                                                    <Image cloudName={CLOUD_NAME} className="img-responsive center-block" publicId={data.public_id}></Image>
                                                 </div>
                                             </div>
                                             <div className="panel-footer">
