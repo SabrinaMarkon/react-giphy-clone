@@ -4,11 +4,11 @@ import auth0 from 'auth0-js';
 const ID_TOKEN_KEY = 'id_token';
 const ACCESS_TOKEN_KEY = 'access_token';
 
-const CLIENT_ID = 'YOUR_CLOUDINARY_CLIENT_ID';
-const CLIENT_DOMAIN = 'YOUR_CLOUDINARY_CLIENT_DOMAIN';
-const REDIRECT = 'http://localhost:3000/callback';
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_DOMAIN = process.env.REACT_APP_CLIENT_ID;
+const REDIRECT = process.env.REACT_APP_REDIRECT;
 const SCOPE = 'create:gifs'; // figure this one out still? like what do I put here?
-const AUDIENCE = 'YOUR_CLOUDINARY_AUDIENCE';
+const AUDIENCE = process.env.REACT_APP_AUDIENCE;
 
 var auth = new auth0.WebAuth({
   clientID: CLIENT_ID,

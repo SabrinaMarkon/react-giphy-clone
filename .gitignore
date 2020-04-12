@@ -1,29 +1,3 @@
-<<<<<<< HEAD
-# See https://help.github.com/ignore-files/ for more about ignoring files.
-
-# dependencies
-/node_modules
-
-# already pushed generic version without credentials:
-#/components/Nav.js
-
-# testing
-/coverage
-
-# production
-/build
-
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-=======
 # Logs
 logs
 *.log
@@ -88,4 +62,3 @@ typings/
 /src/utils/AuthService.js
 /sabrina_auth_files
 
->>>>>>> 19bcf552b4347fa920d442eac8856607c7515a65
