@@ -6,7 +6,7 @@ Demo:
 How to set up:
 
 1. Sign up at Cloudinary for hosting and transforming the files.
-1. Edit the .env file in the root of your project to use your own Cloudinary credentials.
+1. Edit the .env file in the root of your project and enter your own Cloudinary credentials.
 1. npm install.
 
 User stories:

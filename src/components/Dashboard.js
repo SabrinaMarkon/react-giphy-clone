@@ -44,8 +44,6 @@ class Dashboard extends Component {
 
         const { gifs } = this.state;
 
-        console.log(gifs);
-
         return(
             <div>
                 <Nav />

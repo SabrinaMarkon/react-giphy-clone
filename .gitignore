@@ -59,9 +59,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# authentication files:
-/src/UserConstants.js
-/src/utils/AuthService.js
-/sabrina_auth_files
-
