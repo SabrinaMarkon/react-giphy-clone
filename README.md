@@ -18,9 +18,10 @@ User stories:
 
 
 - /src/utils/AuthService.js from https://github.com/auth0-blog/reactjs-authentication-tutorial/blob/master/src/utils/AuthService.js
--Bootstrapped with create-react-app.
--Uses Cloudinary for hosting and transformation of files.
--auth0-js - For authentication 
--react-router - For routing within the app 
--jwt-decode - For decoding the JSON Web Token in the app 
--axios - For making network requests. 
+- Bootstrapped with create-react-app.
+- Uses Cloudinary for hosting and transformation of files:
+"Cloudinary is an end-to-end image- and video-management solution for websites and mobile apps, covering everything from image and video uploads, storage, manipulations, optimizations to delivery". Cloudinary is a Multi-CDN Network that provides high availability of our assets.
+- Auth0 - auth0-js - For user authentication 
+- react-router - For routing within the app 
+- jwt-decode - For decoding the JSON Web Token in the app 
+- axios - For making network requests. 
