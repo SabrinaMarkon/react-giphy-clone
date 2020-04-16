@@ -13,13 +13,14 @@ class Nav extends Component {
             cloud_name: CLOUD_NAME,
             upload_preset: UPLOAD_PRESET,
             tags: ['cliphy'],
-            sources: ['local'],
-            client_allowed_formats: ["png","gif", "jpeg"],
+            sources: ['local', 'url', 'google_photos', 'facebook'],
+            client_allowed_formats: ["png", "gif", "jpeg"],
             keep_widget_open: true,
             multiple: true,
             theme: 'minimal',
         }
         uploadWidget(cloudinarySettings, (res) => {
+            console.log(res);
         //   if (res && res[0] !== undefined) {
         //         this.setState({ isResult: true });
         //         this.setGifString(res[0].public_id);
