@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div>
+      <nav
+        class="navbar navbar-inverse"
+      >
+        <div
+          class="container-fluid"
+        >
+          <div
+            class="navbar-header"
+          >
+            <a
+              class="navbar-brand"
+              href="/"
+            >
+              React Giphy Clone
+            </a>
+          </div>
+          <div>
+            <ul
+              class="nav navbar-nav"
+            >
+              <li>
+                <a
+                  href="/"
+                >
+                  All Gifs
+                </a>
+              </li>
+              <li />
+            </ul>
+            <ul
+              class="navbar navbar-nav navbar-right"
+            >
+              <li
+                style="list-style-type: none;"
+              >
+                 
+              </li>
+              <li
+                style="list-style-type: none;"
+              >
+                <button
+                  class="btn btn-raised btn-md btn-info"
+                  style="margin-right: 20px;"
+                  type="button"
+                >
+                  Login
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div
+        class="row"
+      >
+        <div
+          style="text-align: center; padding: 15px 15px 25px 15px;"
+        >
+          <h1
+            style="font-size: 40px; color: rgb(63, 81, 181); margin: 10px 10px 20px 10px;"
+          >
+            Convert your mp4 or webm video to a small, quality gif!
+          </h1>
+        </div>
+        <div />
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
