@@ -20,12 +20,17 @@ class Nav extends Component {
             theme: 'minimal',
         }
         uploadWidget(cloudinarySettings, (res) => {
+            if (res && res[0] !== undefined) {
+                this.setState({ isResult: true });
+                this.setGifString(res[0].public_id);
+            }
             console.log(res);
-        //   if (res && res[0] !== undefined) {
-        //         this.setState({ isResult: true });
-        //         this.setGifString(res[0].public_id);
-        //     }
-            console.log(res);
+        });
+    }
+
+    setGifString = (uploadedVideoId) => {
+        this.setState({
+            gifUrl: `http://res.cloudinary.com/${CLOUD_NAME}/video/upload${(this.state.startTime > 0 && this.state.endTime > 0) ? '/so_' + this.state.startTime + ',eo_' + this.state.endTime : ''}/${uploadedVideoId}.gif`
         });
     }
 
