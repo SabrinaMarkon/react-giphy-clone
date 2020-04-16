@@ -23,7 +23,7 @@ class Create extends Component {
             cloud_name: CLOUD_NAME,
             upload_preset: UPLOAD_PRESET,
             sources: ['local'],
-            client_allowed_formats: ['mp4', 'webm', 'mov'],
+            client_allowed_formats: ['mp4', 'webm'],
             keep_widget_open: false,
             multiple: false,
             theme: 'minimal',
