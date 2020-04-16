@@ -1,7 +1,7 @@
 React app to make a Giphy clone.
 
 Demo:
-
+https://react-giphy-clone.netlify.app
 
 How to set up:
 
@@ -25,3 +25,5 @@ User stories:
 - react-router - For routing within the app 
 - jwt-decode - For decoding the JSON Web Token in the app 
 - axios - For making network requests. 
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/21c34001-5a17-4f77-8b09-9a4595d51a92/deploy-status)](https://app.netlify.com/sites/react-giphy-clone/deploys)
