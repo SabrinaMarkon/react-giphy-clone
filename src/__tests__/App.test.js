@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { render } from '@testing-library/react';
+import { render, waitForElement } from '@testing-library/react';
+import 'jest-dom/extend-expect';
+import axios from 'axios'
 import App from '../App';
 
 it('renders without crashing', () => {
