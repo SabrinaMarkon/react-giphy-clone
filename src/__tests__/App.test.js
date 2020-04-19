@@ -4,7 +4,6 @@ import { render, cleanup, waitForElement } from '@testing-library/react';
 import "@testing-library/jest-dom/extend-expect";
 // import axios from 'axios';
 import App from '../App';
-// import Dashboard from '../components/Dashboard';
 
 afterEach(cleanup);
 

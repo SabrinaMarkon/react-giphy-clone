@@ -45,8 +45,6 @@ class Dashboard extends Component {
 
         const { gifs } = this.state;
 
-        console.log(gifs + 'HIIIIIIIIII');
-
         return(
             <div>
                 <Nav />
@@ -55,7 +53,7 @@ class Dashboard extends Component {
                     <h1 style={reactIconStyle}>Convert your mp4 or webm video to a small, quality gif!</h1>
                 </div>
                 {
-                    this.state.gifs.length > 0 ?
+                    this.state.gifs ?
                     <CloudinaryContext cloudName={CLOUD_NAME}>
                         {
                             gifs.map((data, index) => (
