@@ -24,16 +24,14 @@ import {
 class Dashboard extends Component {
 
     state = {
-        gifs: [],
-        loading: true
+        gifs: []
     }
 
     getGifs() {
         axios.get(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/cliphy.json`)
             .then(res => {
                 this.setState({
-                    gifs: res.data.resources,
-                    loading: false
+                    gifs: res.data.resources
                 });
             })
             .catch(err => console.log(err));
@@ -47,37 +45,43 @@ class Dashboard extends Component {
 
         const { gifs } = this.state;
 
+        console.log(gifs + 'HIIIIIIIIII');
+
         return(
             <div>
                 <Nav />
                 <div className="row">
                 <div style={bigHeaderStyle}>
                     <h1 style={reactIconStyle}>Convert your mp4 or webm video to a small, quality gif!</h1>
-                    {
-                        this.state.loading === true && <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
-                    }
                 </div>
-                <CloudinaryContext cloudName={CLOUD_NAME}>
-                    {
-                        gifs.map((data, index) => (
-                                <div className="col-md-4 col-sm-6 col-xs-12" key={index}>
-                                    <div className="panel panel-default">
-                                        <div className="panel-body">
-                                            {/* <div className="embed-responsive embed-responsive-16by9"> <-makes them all the same size (cuts off parts of images) */}
-                                            <div>
-                                                <Image cloudName={CLOUD_NAME} className="img-responsive center-block" publicId={data.public_id}></Image>
+                {
+                    this.state.gifs.length > 0 ?
+                    <CloudinaryContext cloudName={CLOUD_NAME}>
+                        {
+                            gifs.map((data, index) => (
+                                    <div className="col-md-4 col-sm-6 col-xs-12" key={index}>
+                                        <div className="panel panel-default">
+                                            <div className="panel-body">
+                                                {/* <div className="embed-responsive embed-responsive-16by9"> <-makes them all the same size (cuts off parts of images) */}
+                                                <div>
+                                                    <Image cloudName={CLOUD_NAME} className="img-responsive center-block" publicId={data.public_id}></Image>
+                                                </div>
+                                            </div>
+                                            <div className="panel-footer">
+                                                <TwitterShareButton className="label label-info" title={"React Giphy Clone"} url={`http://res.cloudinary.com/${CLOUD_NAME}/image/upload/${data.public_id}.gif`}>Twitter</TwitterShareButton>
+                                                <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/${CLOUD_NAME}/image/upload/${data.public_id}.gif`}>Facebook
+                                                </FacebookShareButton>
                                             </div>
                                         </div>
-                                        <div className="panel-footer">
-                                            <TwitterShareButton className="label label-info" title={"React Giphy Clone"} url={`http://res.cloudinary.com/${CLOUD_NAME}/image/upload/${data.public_id}.gif`}>Twitter</TwitterShareButton>
-                                            <FacebookShareButton className="label label-default" url={`http://res.cloudinary.com/${CLOUD_NAME}/image/upload/${data.public_id}.gif`}>Facebook
-                                            </FacebookShareButton>
-                                        </div>
                                     </div>
-                                </div>
-                        ))
-                    }
-                </CloudinaryContext>
+                            ))
+                        }
+                    </CloudinaryContext>
+                    : 
+                    <div style={bigHeaderStyle}>
+                        <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
+                    </div>
+                }
                 </div>
             </div>
         );
