@@ -76,7 +76,7 @@ class Dashboard extends Component {
                         }
                     </CloudinaryContext>
                     : 
-                    <div style={bigHeaderStyle}>
+                    <div style={bigHeaderStyle} data-testid="loading">
                         <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
                     </div>
                 }
