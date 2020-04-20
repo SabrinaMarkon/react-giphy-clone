@@ -27,8 +27,8 @@ class Dashboard extends Component {
         gifs: []
     }
 
-    getGifs() {
-        axios.get(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/cliphy.json`)
+    async getGifs() {
+        await axios.get(`https://res.cloudinary.com/${CLOUD_NAME}/image/list/cliphy.json`)
             .then(res => {
                 this.setState({
                     gifs: res.data.resources
