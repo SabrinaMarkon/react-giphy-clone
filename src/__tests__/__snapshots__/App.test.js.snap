@@ -71,6 +71,16 @@ exports[`matches the snapshot 1`] = `
           </h1>
         </div>
         <div />
+        <div
+          data-testid="loading"
+          style="text-align: center; padding: 15px 15px 25px 15px;"
+        >
+          <img
+            alt="Loading..."
+            src="./images/loader.gif"
+            style="width: 75px; margin-top: 100px;"
+          />
+        </div>
       </div>
     </div>
   </div>

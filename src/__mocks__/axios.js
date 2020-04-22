@@ -15,5 +15,6 @@ test('async test', async () => {
 */
 export default {
     get: jest.fn().mockResolvedValue({ data: {} })
+    // post: jest.fn().mockResolvedValue({})
 };
 

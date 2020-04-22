@@ -80,6 +80,9 @@ class Dashboard extends Component {
                         <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
                     </div>
                 }
+                                    <div style={bigHeaderStyle} data-testid="loading">
+                        <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
+                    </div>
                 </div>
             </div>
         );
