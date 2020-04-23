@@ -35,9 +35,9 @@ it('includes the website title that is a link to the index url ', () => {
 
 it('fetches and displays the data about the gif images', () => {
   act(() => {
-    const { getByTestId } = render(<App />);
-    const progressImg = getByTestId('loading');
-    expect(progressImg).toBeInTheDocument();
+    const { queryByTestId } = render(<App />);
+    const progressImg = queryByTestId('loading');
+    expect(progressImg).toBeNull();
   });
   axiosMock.get.mockResolvedValueOnce({ data: { public_id: 1 } });  
 });

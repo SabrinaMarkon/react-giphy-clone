@@ -23,8 +23,11 @@ import {
 
 class Dashboard extends Component {
 
-    state = {
-        gifs: []
+    constructor(props) {
+        super(props);
+        this.state = {
+            gifs: []
+        }
     }
 
     async getGifs() {
@@ -53,7 +56,11 @@ class Dashboard extends Component {
                     <h1 style={reactIconStyle}>Convert your mp4 or webm video to a small, quality gif!</h1>
                 </div>
                 {
-                    this.state.gifs ?
+                    (!gifs) ? 
+                    <div style={bigHeaderStyle} data-testid="loading">
+                        <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
+                    </div> 
+                    :
                     <CloudinaryContext cloudName={CLOUD_NAME}>
                         {
                             gifs.map((data, index) => (
@@ -75,14 +82,7 @@ class Dashboard extends Component {
                             ))
                         }
                     </CloudinaryContext>
-                    : 
-                    <div style={bigHeaderStyle} data-testid="loading">
-                        <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
-                    </div>
                 }
-                                    <div style={bigHeaderStyle} data-testid="loading">
-                        <img src="./images/loader.gif" alt="Loading..." style={{ width: 75, marginTop: 100 }} />
-                    </div>
                 </div>
             </div>
         );
