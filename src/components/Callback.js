@@ -10,7 +10,6 @@ class Callback extends Component {
   }
 
   render() {
-    console.log('bunnybunny' + isLoggedIn()  + 'bunnybunny'); // I like bunnies so show this in the console.log to let me know we've hit the callback file.
     return null;
   }
 }
