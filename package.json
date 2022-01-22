@@ -19,7 +19,7 @@
     "jwt-decode": "^2.2.0",
     "kind-of": "^6.0.3",
     "mem": "^6.0.1",
-    "node-fetch": "^2.6.1",
+    "node-fetch": "^3.1.1",
     "react": "^16.8",
     "react-dom": "^16.13.1",
     "react-dropzone": "^4.2.9",
